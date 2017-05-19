@@ -19,7 +19,7 @@ RSpec.describe BowlingGame do
 		it 'scores a gutter game' do
 			game = BowlingGame.new
 
-			10.times do
+			20.times do
 				game.roll(0)
 			end
 

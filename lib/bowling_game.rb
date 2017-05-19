@@ -1,11 +1,14 @@
 require "bowling_game/version"
 
 class BowlingGame
+  attr_accessor :score_value
+
   def roll(pins)
-    pins
+    @score_value ||= 0
+    @score_value += pins
   end
 
   def score
-    0
+    @score_value
   end
 end

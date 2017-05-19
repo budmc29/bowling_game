@@ -1,5 +1,7 @@
 require "bowling_game/version"
 
-module BowlingGame
-  # Your code goes here...
+class BowlingGame
+  def run
+    'It works'  
+  end
 end

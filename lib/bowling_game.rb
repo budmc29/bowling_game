@@ -1,11 +1,11 @@
 require "bowling_game/version"
 
 class BowlingGame
-  def run
-    'It works'  
-  end
-
   def roll(pins)
     pins
+  end
+
+  def score
+    0
   end
 end

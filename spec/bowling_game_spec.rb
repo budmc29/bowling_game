@@ -11,12 +11,12 @@ RSpec.describe BowlingGame do
 		it "can roll" do
 			game = BowlingGame.new
 
-			expect(game.roll(0)).to eq(0)
+			expect(game.roll(0)).to be_truthy
 		end
 	end
 
-	describe 'complete game' do
-		it 'scores a gutter game' do
+	describe 'scores a complete game' do
+		it 'of gutter balls' do
 			game = BowlingGame.new
 
 			20.times do
@@ -26,7 +26,7 @@ RSpec.describe BowlingGame do
 			expect(game.score).to eq(0)
 		end
 
-		it 'scores all ones' do
+		it 'of ones' do
 			game = BowlingGame.new
 
 			20.times do

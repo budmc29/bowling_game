@@ -1,4 +1,5 @@
 require "bowling_game/version"
+require "pry"
 
 class BowlingGame
   def initialize
@@ -10,6 +11,16 @@ class BowlingGame
   end
 
   def score
-    @rolls.inject(0){ |s, e| s + e }
+    score = 0
+
+    @rolls.each_slice(2).with_index do |roll, i|
+      if(roll[0] + roll[1] == 10) # Spare
+        score += 10 + @rolls[i + 2]
+      else
+        score += roll[0] + roll[1]
+      end
+    end
+
+    score
   end
 end

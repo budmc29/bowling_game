@@ -14,7 +14,7 @@ class BowlingGame
     score = 0
 
     @rolls.each_slice(2).with_index do |roll, i|
-      if(roll[0] + roll[1] == 10) # Spare
+      if(spare?(roll))
         score += 10 + @rolls[i + 2]
       else
         score += roll[0] + roll[1]
@@ -23,4 +23,10 @@ class BowlingGame
 
     score
   end
+
+	private
+
+	def spare?(roll)
+		(roll[0] + roll[1]) == 10
+	end
 end

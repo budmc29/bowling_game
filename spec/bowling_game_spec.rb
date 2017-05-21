@@ -19,9 +19,7 @@ RSpec.describe BowlingGame do
 		it 'of gutter balls' do
 			game = BowlingGame.new
 
-			20.times do
-				game.roll(0)
-			end
+      roll_ball(20, 0, game)
 
 			expect(game.score).to eq(0)
 		end
@@ -29,9 +27,7 @@ RSpec.describe BowlingGame do
 		it 'of ones' do
 			game = BowlingGame.new
 
-			20.times do
-				game.roll(1)
-			end
+      roll_ball(20, 1, game)
 
 			expect(game.score).to eq(20)
 		end
@@ -43,11 +39,17 @@ RSpec.describe BowlingGame do
 			game.roll(5) # Spare
 			game.roll(3)
 
-			17.times do
-				game.roll(0)
-			end
+      roll_ball(17, 0, game)
 
 			expect(game.score).to eq(16)
 		end
 	end
+
+  private
+
+  def roll_ball(number, value, game)
+    number.times do
+      game.roll(value)
+    end
+  end
 end

@@ -35,14 +35,26 @@ RSpec.describe BowlingGame do
 		it 'with one spare' do
 			game = BowlingGame.new
 
-			game.roll(5)
-			game.roll(5) # Spare
-			game.roll(3)
+      roll_spare(game)
+
+      game.roll(3)
 
       roll_ball(17, 0, game)
 
 			expect(game.score).to eq(16)
 		end
+
+    it 'with a strike' do
+			game = BowlingGame.new
+
+      game.roll(10) # Strike
+      game.roll(3)
+      game.roll(4)
+
+      roll_ball(16, 0, game)
+
+      expect(game.score).to eq(24);
+    end
 	end
 
   private
@@ -51,5 +63,10 @@ RSpec.describe BowlingGame do
     number.times do
       game.roll(value)
     end
+  end
+
+  def roll_spare(game)
+    game.roll(5)
+    game.roll(5) # Spare
   end
 end

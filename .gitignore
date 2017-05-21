@@ -8,5 +8,8 @@
 /spec/reports/
 /tmp/
 
+*.swo
+*.swp
+
 # rspec failure tracking
 .rspec_status

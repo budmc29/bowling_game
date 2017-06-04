@@ -13,3 +13,19 @@
 
 # rspec failure tracking
 .rspec_status
+
+# Vim Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Vim Session
+Session.vim
+
+# Vim Temporary
+.netrwhist
+*~
+
+# Auto-generated tag files
+tags

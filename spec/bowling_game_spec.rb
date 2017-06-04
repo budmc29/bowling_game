@@ -16,70 +16,64 @@ RSpec.describe BowlingGame do
 	end
 
 	describe 'scores a complete game' do
+    before :each do
+      subject { BowlingGame.new }
+    end
+    
 		it 'of gutter balls' do
-			game = BowlingGame.new
+      roll_ball(20, 0)
 
-      roll_ball(20, 0, game)
-
-			expect(game.score).to eq(0)
+			expect(subject.score).to eq(0)
 		end
 
 		it 'of ones' do
-			game = BowlingGame.new
+      roll_ball(20, 1)
 
-      roll_ball(20, 1, game)
-
-			expect(game.score).to eq(20)
+			expect(subject.score).to eq(20)
 		end
 
 		it 'with one spare' do
-			game = BowlingGame.new
+      roll_spare
 
-      roll_spare(game)
+      subject.roll(3)
 
-      game.roll(3)
+      roll_ball(17, 0)
 
-      roll_ball(17, 0, game)
-
-			expect(game.score).to eq(16)
+			expect(subject.score).to eq(16)
 		end
 
     it 'with a strike' do
-			game = BowlingGame.new
+      roll_strike
 
-      roll_strike(game)
+      subject.roll(3)
+      subject.roll(4)
 
-      game.roll(3)
-      game.roll(4)
+      roll_ball(16, 0)
 
-      roll_ball(16, 0, game)
-
-      expect(game.score).to eq(24);
+      expect(subject.score).to eq(24);
     end
 
     it 'with a perfect game' do
-      game = BowlingGame.new
+      roll_ball(12, 10);
 
-      roll_ball(12, 10, game);
-
-      expect(game.score).to eq(300)
+      expect(subject.score).to eq(300)
     end
 	end
 
   private
 
-  def roll_ball(number, value, game)
+  def roll_ball(number, value)
     number.times do
-      game.roll(value)
+      subject.roll(value)
     end
   end
 
-  def roll_spare(game)
-    game.roll(5)
-    game.roll(5)
+  def roll_spare
+    subject.roll(5)
+    subject.roll(5)
   end
 
-  def roll_strike(game)
-    game.roll(10)
+  def roll_strike
+    subject.roll(10)
   end
 end

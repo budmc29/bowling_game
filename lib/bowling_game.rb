@@ -1,5 +1,5 @@
-require "bowling_game/version"
-require "pry"
+require 'bowling_game/version'
+require 'pry'
 
 class BowlingGame
   def initialize
@@ -8,7 +8,6 @@ class BowlingGame
 
   def roll(pins)
     @rolls << pins
-		@rolls
   end
 
   def score

@@ -24,7 +24,7 @@ RSpec.describe BowlingGame do
 			expect(game.score).to eq(0)
 		end
 
-		xit 'of ones' do
+		it 'of ones' do
 			game = BowlingGame.new
 
       roll_ball(20, 1, game)
@@ -32,7 +32,7 @@ RSpec.describe BowlingGame do
 			expect(game.score).to eq(20)
 		end
 
-		xit 'with one spare' do
+		it 'with one spare' do
 			game = BowlingGame.new
 
       roll_spare(game)

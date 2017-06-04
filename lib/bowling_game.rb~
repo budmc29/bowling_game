@@ -24,11 +24,13 @@ class BowlingGame
 
 			#if(strike?(first_roll))
 			#	score += 10 + @rolls[i + 2] + @rolls[i + 3]
-      #elsif(spare?(first_roll, second_roll))
-      #  score += 10 + @rolls[i + 2]
-      #else
+      if(spare?(first_in_frame))
+        score += 10 + @rolls[first_in_frame + 2]
+        first_in_frame += 2
+      else
 				score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
-      #end
+        first_in_frame += 2
+      end
     end
 
     score
@@ -36,8 +38,8 @@ class BowlingGame
 
 	private
 
-	def spare?(first_roll, second_roll)
-		(first_roll + second_roll) == 10
+	def spare?(first_in_frame)
+		(@rolls[first_in_frame] + @rolls[first_in_frame + 1]) == 10
 	end
 
 	def strike?(first_roll)

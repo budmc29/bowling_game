@@ -1,46 +1,46 @@
 require 'spec_helper'
 
 RSpec.describe BowlingGame do
-	describe 'gem' do
-		it 'has a version number' do
-			expect(BowlingGame::VERSION).not_to be nil
-		end
-	end
+  describe 'gem' do
+    it 'has a version number' do
+      expect(BowlingGame::VERSION).not_to be nil
+    end
+  end
 
-	describe '#roll' do
-		it 'can roll' do
-			game = BowlingGame.new
+  describe '#roll' do
+    it 'can roll' do
+      game = BowlingGame.new
 
-			expect(game.roll(0)).to be_truthy
-		end
-	end
+      expect(game.roll(0)).to be_truthy
+    end
+  end
 
-	describe 'scores a complete game' do
+  describe 'scores a complete game' do
     before :each do
       subject { BowlingGame.new }
     end
-    
-		it 'of gutter balls' do
+
+    it 'of gutter balls' do
       roll_ball(20, 0)
 
-			expect(subject.score).to eq(0)
-		end
+      expect(subject.score).to eq(0)
+    end
 
-		it 'of ones' do
+    it 'of ones' do
       roll_ball(20, 1)
 
-			expect(subject.score).to eq(20)
-		end
+      expect(subject.score).to eq(20)
+    end
 
-		it 'with one spare' do
+    it 'with one spare' do
       roll_spare
 
       subject.roll(3)
 
       roll_ball(17, 0)
 
-			expect(subject.score).to eq(16)
-		end
+      expect(subject.score).to eq(16)
+    end
 
     it 'with a strike' do
       roll_strike
@@ -58,7 +58,7 @@ RSpec.describe BowlingGame do
 
       expect(subject.score).to eq(300)
     end
-	end
+  end
 
   private
 

@@ -18,7 +18,17 @@ class BowlingGame
     first_in_frame = 0
 
     for frame in 0...10
-      score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
+    #@rolls.each_slice(2).with_index do |roll, i|
+			#first_roll = roll[0]
+			#second_roll = roll[1]
+
+			#if(strike?(first_roll))
+			#	score += 10 + @rolls[i + 2] + @rolls[i + 3]
+      #elsif(spare?(first_roll, second_roll))
+      #  score += 10 + @rolls[i + 2]
+      #else
+				score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
+      #end
     end
 
     score

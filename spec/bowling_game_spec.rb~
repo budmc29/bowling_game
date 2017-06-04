@@ -16,7 +16,7 @@ RSpec.describe BowlingGame do
 	end
 
 	describe 'scores a complete game' do
-		it 'of gutter balls' do
+		xit 'of gutter balls' do
 			game = BowlingGame.new
 
       roll_ball(20, 0, game)

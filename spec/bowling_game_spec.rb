@@ -44,7 +44,7 @@ RSpec.describe BowlingGame do
 			expect(game.score).to eq(16)
 		end
 
-    xit 'with a strike' do
+    it 'with a strike' do
 			game = BowlingGame.new
 
       roll_strike(game)

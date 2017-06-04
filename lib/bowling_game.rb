@@ -8,13 +8,11 @@ class BowlingGame
 
   def roll(pins)
     @rolls << pins
-		@rolls << 0 if strike?(pins)
 		@rolls
   end
 
   def score
     score = 0
-    current_roll = 0
 
     first_in_frame = 0
     for frame in 0...10

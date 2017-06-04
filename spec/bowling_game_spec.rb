@@ -57,7 +57,7 @@ RSpec.describe BowlingGame do
       expect(game.score).to eq(24);
     end
 
-    xit 'with a perfect game' do
+    it 'with a perfect game' do
       game = BowlingGame.new
 
       roll_ball(12, 10, game);

@@ -1,6 +1,6 @@
 Create version tag
 Release as a gem
 Add usage details
-Request basic input and simple format for output
 Multiple players mode
 Fancy output (ASCII graphic)
+Make it a CLI tool

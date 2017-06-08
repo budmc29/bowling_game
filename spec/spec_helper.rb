@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "bowling_game"
+require "bowling_score_keeper"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

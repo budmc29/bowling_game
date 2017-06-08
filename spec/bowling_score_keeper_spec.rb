@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-RSpec.describe BowlingGame do
+RSpec.describe BowlingScoreKeeper do
   describe 'gem' do
     it 'has a version number' do
-      expect(BowlingGame::VERSION).not_to be nil
+      expect(BowlingScoreKeeper::VERSION).not_to be nil
     end
   end
 
   describe '#roll' do
     it 'can roll' do
-      game = BowlingGame.new
+      game = BowlingScoreKeeper.new
 
       expect(game.roll(0)).to be_truthy
     end
@@ -17,7 +17,7 @@ RSpec.describe BowlingGame do
 
   describe 'scores a complete game' do
     before :each do
-      subject { BowlingGame.new }
+      subject { BowlingScoreKeeper.new }
     end
 
     it 'of gutter balls' do

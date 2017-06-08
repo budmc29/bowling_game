@@ -1,7 +1,7 @@
-require 'bowling_game/version'
+require 'bowling_score_keeper/version'
 require 'pry'
 
-class BowlingGame
+class BowlingScoreKeeper
   MAX_ROLL_POINTS = 10
 
   def initialize

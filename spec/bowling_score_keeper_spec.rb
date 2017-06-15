@@ -15,6 +15,36 @@ RSpec.describe BowlingScoreKeeper do
     end
   end
 
+  describe 'with an incomplete game' do
+    it 'scores the first ball' do
+      subject { BowlingScoreKeeper.new }
+
+      subject.roll(10)
+
+      expect(subject.score).to eq 10
+    end
+
+    it 'scores two balls' do
+      subject { BowlingScoreKeeper.new }
+
+      subject.roll(5)
+      subject.roll(5)
+
+      expect(subject.score).to eq 10
+    end
+
+    it 'scores three balls' do
+      subject { BowlingScoreKeeper.new }
+
+      subject.roll(10)
+      subject.roll(10)
+      subject.roll(10)
+
+      expect(subject.score).to eq 30
+    end
+
+  end
+
   describe 'scores a complete game' do
     before :each do
       subject { BowlingScoreKeeper.new }

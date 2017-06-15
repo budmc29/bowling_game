@@ -13,6 +13,10 @@ class BowlingScoreKeeper
   end
 
   def score
+    if @rolls.size <= 3
+      return @rolls.inject(0) { |s, e| s + e }
+    end
+
     score = 0
 
     first_in_frame = 0

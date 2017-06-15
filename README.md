@@ -8,7 +8,9 @@ Basic implementation of a bowling game score keeper.
 
 ## Usage
 
-TODO: Write usage instructions here
+    game = BowlingScoreKeeper.new
+    game.roll(10)
+    game.score # 10
 
 ## Development
 

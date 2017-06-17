@@ -8,7 +8,7 @@ Basic implementation of a bowling game score keeper.
 
 ## Usage
 
-Start the gem from the command line with:
+Start the gem from the command line with:  
     $ bowling_score_keeper
 
 

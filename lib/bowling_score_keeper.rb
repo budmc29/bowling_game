@@ -1,5 +1,4 @@
 require 'bowling_score_keeper/version'
-require 'pry'
 
 class BowlingScoreKeeper
   MAX_ROLL_POINTS = 10
@@ -20,7 +19,7 @@ class BowlingScoreKeeper
     score = 0
 
     first_in_frame = 0
-    for frame in 0...10
+    10.times do
       if(strike?(first_in_frame))
         score += MAX_ROLL_POINTS + @rolls[first_in_frame + 1] + @rolls[first_in_frame + 2]
         first_in_frame += 1

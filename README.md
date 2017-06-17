@@ -8,9 +8,9 @@ Basic implementation of a bowling game score keeper.
 
 ## Usage
 
-    game = BowlingScoreKeeper.new
-    game.roll(10)
-    game.score # 10
+Start the gem from the command line with:
+    $ bowling_score_keeper
+
 
 ## Development
 

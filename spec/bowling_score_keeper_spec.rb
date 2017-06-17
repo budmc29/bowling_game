@@ -13,6 +13,14 @@ RSpec.describe BowlingScoreKeeper do
 
       expect(game.roll(0)).to be_truthy
     end
+
+    it 'requires an integer' do
+      game = BowlingScoreKeeper.new
+
+      game.roll('0')
+
+      expect(game.score).to be_truthy
+    end
   end
 
   describe 'with an incomplete game' do
@@ -43,6 +51,18 @@ RSpec.describe BowlingScoreKeeper do
       expect(subject.score).to eq 30
     end
 
+    xit 'scores an incomplete game' do
+      subject { BowlingScoreKeeper.new }
+
+      subject.roll(10)
+      subject.roll(10)
+      subject.roll(10)
+      subject.roll(10)
+      subject.roll(10)
+      subject.roll(10)
+
+      expect(subject.score).to eq 60
+    end
   end
 
   describe 'scores a complete game' do

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'bowling_score_keeper'
+
+game = BowlingScoreKeeper.new
+puts 'Game started'
+
+game.roll(0)
+puts 'Rolled a 0'
+
+puts game.score

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'bowling_score_keeper'
+
+game = BowlingScoreKeeper.new
+game.call

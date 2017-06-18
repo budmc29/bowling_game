@@ -1,3 +1,2 @@
 Multiple players mode
 Fancy output (ASCII graphic)
-Make it a CLI tool

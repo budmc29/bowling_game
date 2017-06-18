@@ -21,30 +21,36 @@ class BowlingScoreKeeper
   end
 
   def score
-    return score_for_too_few_rolls if too_few_rolls
+    begin
+      score = 0
+      first_in_frame = 0
 
-    score = 0
-    first_in_frame = 0
-
-    10.times do
-      if(strike?(first_in_frame))
-        score += MAX_ROLL_POINTS +
-          @rolls[first_in_frame + 1] +
-          @rolls[first_in_frame + 2]
-        first_in_frame += 1
-      elsif(spare?(first_in_frame))
-        score += MAX_ROLL_POINTS + @rolls[first_in_frame + 2]
-        first_in_frame += 2
-      else
-        score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
-        first_in_frame += 2
+      10.times do
+        if(strike?(first_in_frame))
+          score += MAX_ROLL_POINTS +
+            @rolls[first_in_frame + 1] +
+            @rolls[first_in_frame + 2]
+          first_in_frame += 1
+        elsif(spare?(first_in_frame))
+          score += MAX_ROLL_POINTS + @rolls[first_in_frame + 2]
+          first_in_frame += 2
+        else
+          score += @rolls[first_in_frame] + @rolls[first_in_frame + 1]
+          first_in_frame += 2
+        end
       end
-    end
 
-    score
+      score
+    rescue
+      'incomplete'
+    end
   end
 
   private
+
+  def print_score
+    puts "Your score is #{score}"
+  end
 
   def set_name
     @name = ''
@@ -63,7 +69,7 @@ class BowlingScoreKeeper
 
       case @value
       when 'score'
-        puts "Your score is #{score}"
+        print_score
       when 'exit'
         print "Congratulation #{@name},"
         puts "You finished the game with a score of: #{score}"
@@ -83,13 +89,5 @@ class BowlingScoreKeeper
 
   def strike?(first_in_frame)
     @rolls[first_in_frame] == MAX_ROLL_POINTS
-  end
-
-  def too_few_rolls
-    @rolls.size <= 3
-  end
-
-  def score_for_too_few_rolls
-    @rolls.inject(0) { |s, e| s + e }
   end
 end

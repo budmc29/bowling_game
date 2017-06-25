@@ -10,6 +10,8 @@ class BowlingScoreKeeper
   end
 
   def call
+    banner
+
     set_name
 
     track_score
@@ -58,6 +60,20 @@ class BowlingScoreKeeper
       puts 'What is your name'
       @name = gets.chomp
     end
+  end
+
+  def banner
+    ascii = %Q[
+______                   _  _                                                _
+| ___ \                 | |(_)                                              | |
+| |_/ /  ___  __      __| | _  _ __    __ _   ___   ___   ___   _ __   ___  | | __  ___   ___  _ __    ___  _ __
+| ___ \ / _ \ \ \ /\ / /| || || '_ \  / _` | / __| / __| / _ \ | '__| / _ \ | |/ / / _ \ / _ \| '_ \  / _ \| '__|
+| |_/ /| (_) | \ V  V / | || || | | || (_| | \__ \| (__ | (_) || |   |  __/ |   < |  __/|  __/| |_) ||  __/| |
+\____/  \___/   \_/\_/  |_||_||_| |_| \__, | |___/ \___| \___/ |_|    \___| |_|\_\ \___| \___|| .__/  \___||_|
+                                       __/ |                                                  | |
+                                      |___/                                                   |_|
+    ]
+    puts ascii
   end
 
   def track_score

@@ -1,2 +1,5 @@
 Multiple players mode
-Fancy output (ASCII graphic)
+Fancy output (ASCII graphic) for the scoreboard
+Extract presentation text and cli interactor to a different class
+Add Banner with ASCII graphic and short description
+Save game info to a file database

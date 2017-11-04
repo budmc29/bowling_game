@@ -1,23 +1,24 @@
-# BowlingGame
+# Bowling Score Keeper
 
 Basic implementation of a bowling game score keeper.
 
 ## Installation
 
-    $ gem install bowling_game
+    $ gem install bowling_score_keeper
 
 ## Usage
 
-Start the gem from the command line with:  
+Start the gem from the command line with:
 
     $ bowling_score_keeper
 
-or  
+or
 
     $ bsk
 
 and follow the on-screen instructions.
 
+_It's still rought around the edges._
 
 ## Development
 
@@ -27,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/budmc29/bowling_game.
+Bug reports and pull requests are welcome on GitHub at https://github.com/budmc29/bowling_score_keeper.
 
 ## License
 

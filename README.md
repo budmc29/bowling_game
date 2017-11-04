@@ -18,7 +18,7 @@ or
 
 and follow the on-screen instructions.
 
-_It's still rought around the edges._
+_It's still rough around the edges._
 
 ## Development
 

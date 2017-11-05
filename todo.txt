@@ -1,5 +1,9 @@
-Multiple players mode
+Write release notes when updating the gem
+Create a roadmap
+Write release instructions
+
 Fancy output (ASCII graphic) for the scoreboard
+Multiple players mode
 Extract presentation text and cli interactor to a different class
 Add Banner with ASCII graphic and short description
 Save game info to a file database
